@@ -87,5 +87,6 @@ if streamlit.button('Get fruit list'):
     
     # add a text box to allow user to add a fruit
     fruit_added = streamlit.text_input('What fruit would you like to add?')
-    streamlit.text(insert_row_snowflake(fruit_added))
+    returned_text = insert_row_snowflake(fruit_added)
+    streamlit.text(returned_text)
     my_cur.close()
