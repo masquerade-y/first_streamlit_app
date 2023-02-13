@@ -74,16 +74,16 @@ def get_fruit_load_list():
 
 # function to allow the end user to add a fruit to the list
 def insert_row_snowflake(new_fruit):
-    with my_cux.cursor() as my_cur:
-        my_cur.execute("INSERT INTO FRUIT_LOAD_LIST VALUES ('" + new_fruit + "')")
-        return "Thanks for adding " + new_fruit + "!"
+    #with my_cux.cursor() as my_cur:
+    my_cur.execute("INSERT INTO FRUIT_LOAD_LIST VALUES ('" + new_fruit + "')")
+    return "Thanks for adding " + new_fruit + "!"
 
 # add a button to load the fruit list
 if streamlit.button('Get fruit list'):
     my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
-    freuit_list = get_fruit_load_list()
+    fruit_list = get_fruit_load_list()
     streamlit.markdown("**The fruit load list contains:**")
-    streamlit.dataframe(freuit_list)
+    streamlit.dataframe(fruit_list)
     
     # add a text box to allow user to add a fruit
     fruit_added = streamlit.text_input('What fruit would you like to add?')
