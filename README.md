@@ -1,4 +1,4 @@
-# first_streamlit_app
+# First Streamlit App
 
 My first Streamlit app that I'm going to build along with the Snowflake Data Application Builders Workshop.
 
