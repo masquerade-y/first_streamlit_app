@@ -85,13 +85,15 @@ if streamlit.button('Get fruit list'):
     streamlit.markdown("**The fruit load list contains:**")
     streamlit.dataframe(fruit_list)
     #my_cnx.close()
-    
-    # add a text box to allow user to add a fruit
-    fruit_added = streamlit.text_input('What fruit would you like to add?')
 
     # add a button to add the fruit to the list
     if streamlit.button('Add the fruit to the list'):
         #my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
+        
+        # add a text box to allow user to add a fruit
+        fruit_added = streamlit.text_input('What fruit would you like to add?')
+        
+        # insert the record nack to Snowflake
         streamlit.text(insert_row_snowflake(fruit_added))
     
     my_cnx.close()
